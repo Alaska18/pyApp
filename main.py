@@ -13,5 +13,11 @@ def repeat_text(ack, say, command):
     say(f"Hey!")
 
 
+@app.message("Hello")
+def say_hello(message, say):
+    user = message['user']
+    say(f"Hi there, <@{user}>")
+
+
 if __name__ == "__main__":
     app.start(port=int(os.environ.get("PORT", 3000)))
